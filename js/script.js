@@ -153,17 +153,42 @@ document.addEventListener('DOMContentLoaded', function() {
         cardObserver.observe(card);
     });
 
-    // --- Interactive Gradient on Cards ---
-    const interactiveCards = document.querySelectorAll('.expertise-card, .portfolio-card, .testimonial-card');
+    // --- AJAX Contact Form Submission ---
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
 
-    interactiveCards.forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+    async function handleFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const data = new FormData(form);
+        const submitButton = form.querySelector('button');
 
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
-        });
-    });
+        try {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                formStatus.textContent = "Thanks for your message! I'll get back to you soon.";
+                formStatus.className = 'success';
+                form.reset();
+            } else {
+                formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+                formStatus.className = 'error';
+            }
+        } catch (error) {
+            formStatus.textContent = 'Oops! There was a network error. Please try again.';
+            formStatus.className = 'error';
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+        }
+    }
+
+    contactForm.addEventListener('submit', handleFormSubmit);
 });

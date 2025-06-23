@@ -25,22 +25,35 @@
     right: 0;
     bottom: 0;
     border-radius: inherit; /* Match the card's border-radius */
-    /* This gradient follows the mouse, positioned by JS custom properties */
-    background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y), rgba(143, 179, 217, 0.1), transparent 80%);
+    /* This is now a colorful, self-animating gradient that appears on hover */
+    background: linear-gradient(
+        110deg, 
+        rgba(42, 157, 143, 0.15), /* Rich Teal */
+        rgba(76, 201, 240, 0.15), /* Bright Sky Blue */
+        rgba(58, 12, 163, 0.15), /* Vibrant Royal Purple */
+        rgba(42, 157, 143, 0.15)  /* Rich Teal to complete the loop */
+    );
+    background-size: 300% 100%;
+    animation: cardGradientAnimation 8s linear infinite;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     z-index: -1; /* Place it behind the card's content */
 }
 
 /* --- Expertise & Service Card Styles --- */
-.expertise-card h3 {
-    color: var(--accent-color);
-    margin-bottom: 1rem;
+.expertise-card {
+    display: flex;
+    flex-direction: column;
 }
 
 .expertise-card p {
     color: var(--text-muted-color);
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.expertise-card h3 {
+    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
@@ -81,14 +94,18 @@
     flex-direction: column;
 }
 
-.portfolio-card .tags {
+.tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1rem;
 }
 
-.portfolio-card .tags span {
+.expertise-card .tags {
+    margin-top: auto; /* Pushes tags to the bottom of the card */
+    padding-top: 0.5rem; /* Add a little space above the tags */
+}
+
+.tags span {
     background-color: var(--primary-color);
     color: var(--accent-color);
     padding: 0.25rem 0.75rem;
@@ -98,7 +115,7 @@
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.portfolio-card .tags span:hover {
+.tags span:hover {
     transform: translateY(-2px);
     background-color: var(--accent-color);
     color: var(--primary-color);
@@ -147,4 +164,11 @@
 .testimonial-card .author .title {
     font-size: 0.9rem;
     color: var(--text-muted-color);
+}
+
+/* Keyframes for the card's animated gradient */
+@keyframes cardGradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }

@@ -101,8 +101,9 @@
                         - `loading="lazy"` defers loading until the image is near the viewport.
                         - `decoding="async"` prevents image decoding from blocking the main thread.
                     -->
-                    <img src="media/headshot-2000w.webp" 
-                         srcset="media/headshot-400w.webp 400w, media/headshot-800w.webp 800w"
+                    <img src="media/headshot-400w.jpg" 
+                         srcset="media/headshot-400w.webp 400w, media/headshot-800w.webp 800w,
+                                 media/headshot-400w.jpg 400w, media/headshot-800w.jpg 800w"
                          sizes="(max-width: 768px) 150px, 250px"
                          alt="Headshot of Gijs Mulder" 
                          class="profile-photo"
@@ -124,27 +125,45 @@
                 <div class="card-grid">
                     <div class="expertise-card fade-in-card">
                         <h3>Programming</h3>
-                        <p>Python, SQL, Protobuf, Bash, Java, C#, C++, PHP, Vue.js</p>
+                        <p>Fluent in core data languages and versatile across paradigms, from scripting and object-oriented development to functional programming.</p>
+                        <div class="tags">
+                            <span>Python</span><span>SQL</span><span>Protobuf</span><span>Bash</span><span>Java</span><span>C#</span><span>C++</span><span>PHP</span><span>Vue.js</span>
+                        </div>
                     </div>
                     <div class="expertise-card fade-in-card">
-                        <h3>Tools & Libraries</h3>
-                        <p>Databricks, Docker, Spark, Git, REST APIs, GraphQL, Pytest, SQLAlchemy</p>
+                        <h3>Tools &amp; Libraries</h3>
+                        <p>Proficient with the modern data stack, leveraging powerful libraries and distributed systems to process and manage data at scale.</p>
+                        <div class="tags">
+                            <span>Databricks</span><span>Docker</span><span>Spark</span><span>Git</span><span>REST APIs</span><span>GraphQL</span><span>Pytest</span><span>SQLAlchemy</span>
+                        </div>
                     </div>
                     <div class="expertise-card fade-in-card">
                         <h3>Engineering Principles</h3>
-                        <p>CI/CD, Automated Testing (Unit, Integration, E2E), Observability & Monitoring, DevOps</p>
+                        <p>Committed to building robust, maintainable systems through proven software engineering practices and a DevOps mindset.</p>
+                        <div class="tags">
+                            <span>CI/CD</span><span>Automated Testing</span><span>Observability</span><span>DevOps</span>
+                        </div>
                     </div>
                     <div class="expertise-card fade-in-card">
                         <h3>Databases</h3>
-                        <p>PostgreSQL, MySQL, Delta Lake, On-disk Partitioning</p>
+                        <p>Experienced with relational, non-relational, and modern data lakehouse architectures to store and query data efficiently.</p>
+                        <div class="tags">
+                            <span>PostgreSQL</span><span>MySQL</span><span>Delta Lake</span><span>Partitioning</span>
+                        </div>
                     </div>
                     <div class="expertise-card fade-in-card">
-                        <h3>Cloud & Web</h3>
-                        <p>Azure, Databricks, Linux, HTML/CSS, API-first Backends</p>
+                        <h3>Cloud &amp; Web</h3>
+                        <p>Skilled in deploying and managing data solutions on major cloud platforms and building the APIs that power them.</p>
+                        <div class="tags">
+                            <span>Azure</span><span>Databricks</span><span>Linux</span><span>HTML/CSS</span><span>API-first Backends</span>
+                        </div>
                     </div>
                     <div class="expertise-card fade-in-card">
                         <h3>Professional</h3>
-                        <p>Agile/Scrum, Stakeholder Communication, Technical Documentation, TDD, Performance Tuning</p>
+                        <p>A collaborative team player focused on clear communication, agile methodologies, and delivering business value through technology.</p>
+                        <div class="tags">
+                            <span>Agile/Scrum</span><span>Stakeholder Comms</span><span>Tech Docs</span><span>TDD</span><span>Performance Tuning</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -235,32 +254,32 @@
                     <div class="service-card expertise-card fade-in-card">
                         <h3>Data Pipeline Engineering</h3>
                         <p>Designing, building, and optimizing robust ETL/ELT pipelines for reliable data ingestion and transformation from diverse sources to analytical platforms.</p>
-                        <span>Python, SQL, Spark, Kafka, Airflow</span>
+                        <div class="tags"><span>Python</span><span>SQL</span><span>Spark</span><span>Kafka</span><span>Airflow</span></div>
                     </div>
                     <div class="service-card expertise-card fade-in-card">
                         <h3>Cloud Data Architecture</h3>
                         <p>Architecting scalable and cost-efficient data solutions on leading cloud platforms, leveraging services like Databricks, Azure Data Factory, and Google Cloud Platform.</p>
-                        <span>Azure, GCP, Databricks, Delta Lake, Snowflake</span>
+                        <div class="tags"><span>Azure</span><span>GCP</span><span>Databricks</span><span>Delta Lake</span><span>Snowflake</span></div>
                     </div>
                     <div class="service-card expertise-card fade-in-card">
                         <h3>Data Quality & Governance</h3>
                         <p>Implementing strategies and tools to ensure data accuracy, consistency, and compliance, building trust in your data assets.</p>
-                        <span>Data Validation, Monitoring, Metadata Management</span>
+                        <div class="tags"><span>Data Validation</span><span>Monitoring</span><span>Metadata</span></div>
                     </div>
                     <div class="service-card expertise-card fade-in-card">
                         <h3>DevOps for Data</h3>
                         <p>Automating data infrastructure deployment, monitoring, and operations using CI/CD, Infrastructure as Code (IaC), and containerization for efficient, repeatable workflows.</p>
-                        <span>Docker, Kubernetes, Terraform, CI/CD Pipelines</span>
+                        <div class="tags"><span>Docker</span><span>Kubernetes</span><span>Terraform</span><span>CI/CD</span></div>
                     </div>
                     <div class="service-card expertise-card fade-in-card">
                         <h3>Performance Optimization</h3>
                         <p>Identifying bottlenecks and optimizing data processing workflows to reduce latency, improve efficiency, and lower operational costs.</p>
-                        <span>Query Tuning, Distributed Computing, Resource Management</span>
+                        <div class="tags"><span>Query Tuning</span><span>Distributed Computing</span><span>Optimization</span></div>
                     </div>
                     <div class="service-card expertise-card fade-in-card">
                         <h3>Technical Consulting & Strategy</h3>
                         <p>Providing expert guidance on data strategy, technology selection, and best practices to align your data initiatives with business goals.</p>
-                        <span>Stakeholder Communication, Solution Design, Roadmapping</span>
+                        <div class="tags"><span>Consulting</span><span>Solution Design</span><span>Roadmapping</span></div>
                     </div>
                 </div>
             </div>
@@ -307,6 +326,7 @@
                     </div>
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
+                <div id="form-status"></div>
                  <div class="social-links-footer">
                     <a href="https://www.linkedin.com/in/gijs-m-6261bb162" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com/gijsmulder" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
