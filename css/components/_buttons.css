@@ -1,0 +1,22 @@
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background-color: #0056b3;
+}
+
+.project-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    align-self: flex-start;
+}

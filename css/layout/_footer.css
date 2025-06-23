@@ -1,0 +1,12 @@
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: rgba(10, 17, 40, 0.9); /* Use primary color with transparency */
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+}

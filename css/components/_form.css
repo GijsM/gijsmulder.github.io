@@ -1,0 +1,39 @@
+/* --- Contact Form Styles --- */
+#contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: left; /* Align form elements left */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allow vertical resizing */
+}

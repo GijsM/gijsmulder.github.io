@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Social Sharing Meta Tags -->
+    <meta name="description" content="Gijs Mulder is a freelance data engineer specializing in building clean, scalable, and impactful data systems. Explore his portfolio, services, and experience.">
+    <meta name="keywords" content="Gijs Mulder, Data Engineer, Freelance, Python, SQL, Databricks, Azure, Big Data, ETL">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gijsmulder.nl/">
+    <meta property="og:title" content="Gijs Mulder | Data Engineer">
+    <meta property="og:description" content="Freelance data engineer specializing in building clean, scalable, and impactful data systems.">
+    <meta property="og:image" content="https://gijsmulder.nl/media/social-preview.png"> <!-- Create a 1200x630px image for this -->
+    
+    <title>Gijs Mulder | Data Engineer</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Icon Library: Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- SEO: Schema.org Structured Data for Rich Snippets -->
+    <!-- Please update the 'url' and 'image' properties below with your final domain name. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Gijs Mulder",
+          "jobTitle": "Data Engineer",
+          "url": "https://gijsmulder.nl",
+          "image": "https://gijsmulder.nl/media/headshot.png",
+          "sameAs": [
+            "https://www.linkedin.com/in/gijs-m-6261bb162",
+            "https://github.com/gijsmulder"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Xomnia"
+          },
+          "description": "Technically adept and analytically minded data engineer with a strong foundation in software engineering and a deep commitment to building clean, scalable data systems.",
+          "knowsAbout": ["Data Engineering", "Python", "SQL", "Databricks", "Docker", "Spark", "CI/CD", "DevOps", "Azure", "Cloud Architecture", "Data Pipelines"]
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://gijsmulder.nl",
+          "name": "Gijs Mulder | Data Engineer",
+          "author": { "@type": "Person", "name": "Gijs Mulder" },
+          "publisher": { "@type": "Person", "name": "Gijs Mulder" }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="gradient-background">
+
+    <header id="main-header">
+        <div class="container">
+            <nav>
+                <div class="logo">Gijs Mulder</div>
+                <ul class="nav-links" id="nav-links-list">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#expertise">Expertise</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="hamburger" aria-controls="nav-links-list" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="line1"></span><span class="line2"></span><span class="line3"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <h1 class="animated-glow" data-text="Gijs Mulder">Gijs Mulder</h1>
+                <p class="subtitle">Freelance Data Engineer | Consultant at Xomnia | Building clean, scalable, and impactful data systems.</p>
+                <a href="#portfolio" class="cta-button">View My Work</a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/gijs-m-6261bb162" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/gijsmulder" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <h2 id="about-heading" class="animated-glow" data-text="About Me">About Me</h2>
+                <div class="about-content">
+                    <!-- 
+                        Image Optimization Best Practices:
+                        - Use modern formats like WebP for better compression.
+                        - Use `srcset` and `sizes` for responsive images.
+                        - `loading="lazy"` defers loading until the image is near the viewport.
+                        - `decoding="async"` prevents image decoding from blocking the main thread.
+                    -->
+                    <img src="media/headshot-2000w.webp" 
+                         srcset="media/headshot-400w.webp 400w, media/headshot-800w.webp 800w"
+                         sizes="(max-width: 768px) 150px, 250px"
+                         alt="Headshot of Gijs Mulder" 
+                         class="profile-photo"
+                         loading="lazy"
+                         decoding="async"
+                         width="250" height="250">
+                    <div class="about-text">
+                        <p>I am a technically adept and analytically minded data engineer with a strong foundation in software engineering and a deep commitment to building clean, scalable data systems. With a background in computer science and professional experience across e-commerce, adtech, and sustainability-focused tech environments, I bring a practical, structured approach to solving data challenges, whether that means designing new pipelines from scratch or re-architecting legacy systems to meet modern demands.</p>
+                        <p>I thrive in cross-functional teams, value clear documentation and code quality, and combine a pragmatic problem-solving approach with an eye for long-term maintainability. I’m especially motivated by projects that push technical boundaries and have real-world impact, whether optimizing digital marketing infrastructure or contributing to climate-conscious innovation.</p>
+                        <a href="/Gijs_Mulder_CV.pdf" download class="cta-button">Download CV</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="expertise" aria-labelledby="expertise-heading">
+            <div class="container">
+                <h2 id="expertise-heading" class="animated-glow" data-text="Technical Skills">Technical Skills</h2>
+                <div class="card-grid">
+                    <div class="expertise-card fade-in-card">
+                        <h3>Programming</h3>
+                        <p>Python, SQL, Protobuf, Bash, Java, C#, C++, PHP, Vue.js</p>
+                    </div>
+                    <div class="expertise-card fade-in-card">
+                        <h3>Tools & Libraries</h3>
+                        <p>Databricks, Docker, Spark, Git, REST APIs, GraphQL, Pytest, SQLAlchemy</p>
+                    </div>
+                    <div class="expertise-card fade-in-card">
+                        <h3>Engineering Principles</h3>
+                        <p>CI/CD, Automated Testing (Unit, Integration, E2E), Observability & Monitoring, DevOps</p>
+                    </div>
+                    <div class="expertise-card fade-in-card">
+                        <h3>Databases</h3>
+                        <p>PostgreSQL, MySQL, Delta Lake, On-disk Partitioning</p>
+                    </div>
+                    <div class="expertise-card fade-in-card">
+                        <h3>Cloud & Web</h3>
+                        <p>Azure, Databricks, Linux, HTML/CSS, API-first Backends</p>
+                    </div>
+                    <div class="expertise-card fade-in-card">
+                        <h3>Professional</h3>
+                        <p>Agile/Scrum, Stakeholder Communication, Technical Documentation, TDD, Performance Tuning</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" aria-labelledby="portfolio-heading">
+            <div class="container">
+                <h2 id="portfolio-heading" class="animated-glow" data-text="Experience & Projects">Experience & Projects</h2>
+                <div class="portfolio-grid">
+
+                    <div class="portfolio-card fade-in-card">
+                        <div class="card-content">
+                            <h3>Data Engineer @ Adchieve</h3>
+                            <p>As part of the core data engineering team, I developed and maintained an in-house, Python-based big data ETL platform processing large volumes of marketing data. I focused on expanding system capabilities, enhancing testability (unit, integration, E2E), performance, and automating deployment workflows (CI/CD). I also led a key migration evaluation project to Azure Databricks, re-implementing workflows with Delta Lake and Spark to analyze scalability and cost.</p>
+                            <div class="tags">
+                                <span>Python</span>
+                                <span>SQL</span>
+                                <span>Docker</span>
+                                <span>Azure Databricks</span>
+                                <span>Spark</span>
+                                <span>CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card fade-in-card">
+                        <div class="card-content">
+                            <h3>Fullstack Developer @ Adchieve</h3>
+                            <p>Developed a client-facing dashboard platform using PHP and Vue.js, enabling e-commerce clients to visualize campaign data and gain actionable insights. I implemented interfaces for conversion tracking and product analytics, and automated reporting processes within a containerized Docker environment.</p>
+                            <div class="tags">
+                                <span>PHP</span>
+                                <span>Vue.js</span>
+                                <span>SQL</span>
+                                <span>Docker</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card fade-in-card">
+                        <div class="card-content">
+                            <a href="https://newsaiart.web.app/#/" target="_blank" rel="noopener noreferrer" class="card-link-wrapper">
+                                <h3>Today In Paint</h3>
+                                <p>A creative personal project leveraging Large Language Models and Stable Diffusion to transform news articles into captivating paintings. The application is built on a serverless Google Cloud architecture with a Flutter frontend, showcasing my skills in modern AI/ML integration and full-stack development.</p>
+                                <div class="tags">
+                                    <span>GCP</span>
+                                    <span>Serverless</span>
+                                    <span>Flutter</span>
+                                    <span>AI/ML</span>
+                                </div>
+                                 <span class="project-link">View Project <i class="fas fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card fade-in-card">
+                        <div class="card-content">
+                            <h3>Embedded Software Engineer</h3>
+                            <p>As a full-time embedded software engineer for the Solar Team Eindhoven, I developed low-level C++ software to control and monitor a distributed network of embedded systems via CAN-bus for a solar-powered family car. This role required close collaboration with mechanical and electrical engineers in a high-stakes, real-time systems environment.</p>
+                            <div class="tags">
+                                <span>C++</span>
+                                <span>Embedded Systems</span>
+                                <span>CAN-bus</span>
+                                <span>Real-Time Systems</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card fade-in-card">
+                        <div class="card-content">
+                            <h3>Database Schema Visualizer</h3>
+                            <p>As part of my final bachelor project, I collaborated in a team of eight to develop a database schema visualization tool for a client. The tool was designed to manage vast schemas with thousands of tables, built with TypeScript and React, and followed agile development practices including TDD and CI/CD.</p>
+                            <div class="tags">
+                                <span>TypeScript</span>
+                                <span>React.js</span>
+                                <span>Agile</span>
+                                <span>TDD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <h2 id="services-heading" class="animated-glow" data-text="My Services">My Services</h2>
+                <div class="card-grid">
+                    <div class="service-card expertise-card fade-in-card">
+                        <h3>Data Pipeline Engineering</h3>
+                        <p>Designing, building, and optimizing robust ETL/ELT pipelines for reliable data ingestion and transformation from diverse sources to analytical platforms.</p>
+                        <span>Python, SQL, Spark, Kafka, Airflow</span>
+                    </div>
+                    <div class="service-card expertise-card fade-in-card">
+                        <h3>Cloud Data Architecture</h3>
+                        <p>Architecting scalable and cost-efficient data solutions on leading cloud platforms, leveraging services like Databricks, Azure Data Factory, and Google Cloud Platform.</p>
+                        <span>Azure, GCP, Databricks, Delta Lake, Snowflake</span>
+                    </div>
+                    <div class="service-card expertise-card fade-in-card">
+                        <h3>Data Quality & Governance</h3>
+                        <p>Implementing strategies and tools to ensure data accuracy, consistency, and compliance, building trust in your data assets.</p>
+                        <span>Data Validation, Monitoring, Metadata Management</span>
+                    </div>
+                    <div class="service-card expertise-card fade-in-card">
+                        <h3>DevOps for Data</h3>
+                        <p>Automating data infrastructure deployment, monitoring, and operations using CI/CD, Infrastructure as Code (IaC), and containerization for efficient, repeatable workflows.</p>
+                        <span>Docker, Kubernetes, Terraform, CI/CD Pipelines</span>
+                    </div>
+                    <div class="service-card expertise-card fade-in-card">
+                        <h3>Performance Optimization</h3>
+                        <p>Identifying bottlenecks and optimizing data processing workflows to reduce latency, improve efficiency, and lower operational costs.</p>
+                        <span>Query Tuning, Distributed Computing, Resource Management</span>
+                    </div>
+                    <div class="service-card expertise-card fade-in-card">
+                        <h3>Technical Consulting & Strategy</h3>
+                        <p>Providing expert guidance on data strategy, technology selection, and best practices to align your data initiatives with business goals.</p>
+                        <span>Stakeholder Communication, Solution Design, Roadmapping</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <h2 id="testimonials-heading" class="animated-glow" data-text="Testimonials">Testimonials</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card fade-in-card">
+                        <div class="card-content">
+                            <p class="quote">"I had the pleasure of working with Gijs in the data engineering team at Adchieve. Not only does he have broad knowledge in software development and data, but he is also very meticulous in his work... As a colleague, he is communicative, assertive, and responsible. Besides that, he is also a very pleasant person!"</p>
+                            <div class="author-info">
+                                <a href="https://www.linkedin.com/in/johnnywang/" target="_blank" rel="noopener noreferrer" class="card-link-wrapper">
+                                    <div class="author">
+                                        <span class="name">Johnny Wang</span>
+                                        <span class="title">Data Team Lead at Adchieve</span>
+                                    </div>
+                                    <span class="project-link">View on LinkedIn <i class="fas fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading" class="animated-glow" data-text="Get In Touch">Get In Touch</h2>
+                <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious vision. Feel free to reach out using the form below, or connect with me on LinkedIn.</p>
+                <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"> <!-- Replace 'your-form-id' with your actual Formspree ID -->
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+                 <div class="social-links-footer">
+                    <a href="https://www.linkedin.com/in/gijs-m-6261bb162" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/gijsmulder" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Gijs Mulder. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+        </svg>
+    </button>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

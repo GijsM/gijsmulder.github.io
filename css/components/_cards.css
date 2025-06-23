@@ -1,0 +1,150 @@
+/* Unified base styles for all cards */
+.expertise-card,
+.portfolio-card,
+.testimonial-card {
+    position: relative; /* Needed for the pseudo-element */
+    overflow: hidden; /* To contain the pseudo-element */
+    z-index: 1; /* To be on top of the pseudo-element */
+    background-color: var(--card-bg-color); /* Consistent background for all cards */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    
+    /* Default transitions (individual cards will add more) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pseudo-element for the animated gradient on all cards */
+.expertise-card::after,
+.portfolio-card::after,
+.testimonial-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit; /* Match the card's border-radius */
+    /* This gradient follows the mouse, positioned by JS custom properties */
+    background: radial-gradient(350px circle at var(--mouse-x) var(--mouse-y), rgba(143, 179, 217, 0.1), transparent 80%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: -1; /* Place it behind the card's content */
+}
+
+/* --- Expertise & Service Card Styles --- */
+.expertise-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.expertise-card p {
+    color: var(--text-muted-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.expertise-card span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.expertise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.expertise-card:hover::after {
+    opacity: 1;
+}
+
+/* --- Portfolio Card Styles --- */
+.portfolio-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Preserve existing transitions */
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-card:hover::after {
+    opacity: 1;
+}
+
+.portfolio-card .card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.portfolio-card .tags span {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.portfolio-card .tags span:hover {
+    transform: translateY(-2px);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* --- Testimonial Card Styles --- */
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease; /* Preserve existing transitions */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card:hover::after {
+    opacity: 1;
+}
+
+.testimonial-card .card-content {
+    padding: 1.5rem;
+}
+
+.testimonial-card .quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted-color);
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Pushes the author info down */
+}
+
+.testimonial-card .author-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.testimonial-card .author .name {
+    font-weight: 600;
+    color: var(--text-color);
+    display: block;
+    font-size: 1rem;
+}
+
+.testimonial-card .author .title {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+}

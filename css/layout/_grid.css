@@ -1,0 +1,18 @@
+/* --- Portfolio Section (specific grid layout) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Generic grid for card-based sections like Services and Skills */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-grid {
+    display: flex;
+    justify-content: center;
+}

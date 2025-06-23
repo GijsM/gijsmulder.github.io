@@ -1,0 +1,125 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #0A1128; /* Deep Midnight Blue */
+    --secondary-color: #121A30; /* Darker Slate Blue */
+    --accent-color: #8FB3D9; /* Slightly brighter, less muted blue */ 
+    --text-color: #E0E1DD; /* Off-white */
+    --text-muted-color: #A9A9A9; /* Light Gray */
+    --card-bg-color: var(--secondary-color);
+    --border-color: #3D5A80; /* Muted Steel Blue */
+    
+    /* Card Hover Gradient */
+    --card-hover-gradient: linear-gradient(to right,
+        rgba(143, 179, 217, 0.05) 0%, /* Subtle new blue start */
+        rgba(143, 179, 217, 0.15) 50%, /* Slightly more visible new blue middle */
+        rgba(143, 179, 217, 0.05) 100%  /* Subtle new blue end */
+    );
+    
+    /* More Colorful Gradient */
+    --gradient-color-1: #1A0D3B; /* Deep Indigo */
+    --gradient-color-2: #3A0CA3; /* Vibrant Royal Purple */
+    --gradient-color-3: #4CC9F0; /* Bright Sky Blue */
+    --gradient-color-4: #2A9D8F; /* Rich Teal */
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Accessibility: Add a clear focus indicator for keyboard users */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+ 
+body.gradient-background {
+    background-color: var(--primary-color); /* Solid dark background */
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* The moving gradient is now on a pseudo-element behind everything */
+body.gradient-background::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Directly behind the content */
+    background: 
+        radial-gradient(circle at 15% 25%, var(--gradient-color-2), transparent 35%),
+        radial-gradient(circle at 80% 90%, var(--gradient-color-3), transparent 35%),
+        radial-gradient(circle at 50% 50%, var(--gradient-color-1), transparent 30%);
+    background-size: 250% 250%;
+    /* Hint to the browser to offload this animation to the GPU for smoother performance */
+    will-change: transform, opacity;
+    animation: gradientAnimation 20s ease-in-out infinite;
+}
+
+/* Accessibility: Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto; /* Use instant scrolling */
+    }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --- Back to Top Button --- */
+#back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color); /* Text color for the button */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden; /* Hidden by default */
+    transform: translateY(20px); /* Start slightly off-screen */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    z-index: 999; /* Ensure it's above other content */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slide into view */
+}
+
+#back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+#back-to-top svg {
+    fill: currentColor; /* Use the button's text color for the SVG */
+}
+
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+    }
+}
