@@ -94,6 +94,30 @@
     flex-direction: column;
 }
 
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-header h3 {
+    margin-bottom: 0; /* The header wrapper now handles the margin */
+}
+
+.company-tag {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
 .tags {
     display: flex;
     flex-wrap: wrap;
