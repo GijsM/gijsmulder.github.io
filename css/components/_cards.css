@@ -34,7 +34,6 @@
         rgba(42, 157, 143, 0.15)  /* Rich Teal to complete the loop */
     );
     background-size: 300% 100%;
-    animation: cardGradientAnimation 8s linear infinite;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     z-index: -1; /* Place it behind the card's content */
@@ -70,6 +69,7 @@
 
 .expertise-card:hover::after {
     opacity: 1;
+    animation: cardGradientAnimation 8s linear infinite;
 }
 
 /* --- Portfolio Card Styles --- */
@@ -85,6 +85,7 @@
 
 .portfolio-card:hover::after {
     opacity: 1;
+    animation: cardGradientAnimation 8s linear infinite;
 }
 
 .portfolio-card .card-content {
@@ -159,6 +160,7 @@
 
 .testimonial-card:hover::after {
     opacity: 1;
+    animation: cardGradientAnimation 8s linear infinite;
 }
 
 .testimonial-card .card-content {
