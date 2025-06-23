@@ -1,11 +1,28 @@
 @keyframes gradientAnimation {
-    0% { background-position: 0% 0%; }
-    25% { background-position: 100% 0%; }
-    50% { background-position: 100% 100%; }
-    75% { background-position: 0% 100%; }
-    100% { background-position: 0% 0%; }
+    0% {
+        background-position: 0% 50%;
+        background-size: 400% 400%;
+    }
+    25% {
+        background-position: 100% 0%;
+        background-size: 300% 300%;
+    }
+    50% {
+        background-position: 0% 50%;
+        background-size: 400% 400%;
+    }
+    75% {
+        background-position: 100% 100%;
+        background-size: 300% 300%;
+    }
+    100% {
+        background-position: 0% 50%;
+        background-size: 400% 400%;
+    }
 }
 
+/* Keyframes for the card's animated gradient */
+/* Note: This is a separate animation for the cards, not the main background */
 @keyframes cardGradientAnimation {
     from { background-position: 0% 50%; }
     to { background-position: 200% 50%; }

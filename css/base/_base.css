@@ -58,7 +58,7 @@ body.gradient-background::before {
         radial-gradient(circle at 15% 25%, var(--gradient-color-2), transparent 35%),
         radial-gradient(circle at 80% 90%, var(--gradient-color-3), transparent 35%),
         radial-gradient(circle at 50% 50%, var(--gradient-color-1), transparent 30%);
-    background-size: 250% 250%;
+    background-size: 400% 400%; /* Increased size for more dynamic movement */
     /* Hint to the browser to offload this animation to the GPU for smoother performance */
     will-change: transform, opacity;
     animation: gradientAnimation 20s ease-in-out infinite;

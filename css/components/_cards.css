@@ -124,9 +124,10 @@
     gap: 0.5rem;
 }
 
-.expertise-card .tags {
+.expertise-card .tags,
+.portfolio-card .tags {
     margin-top: auto; /* Pushes tags to the bottom of the card */
-    padding-top: 0.5rem; /* Add a little space above the tags */
+    padding-top: 1rem; /* Add some space above the tags */
 }
 
 .tags span {
