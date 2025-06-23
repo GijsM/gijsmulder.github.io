@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinksUl = document.querySelector('.nav-links');
     const navLinksLi = document.querySelectorAll('.nav-links li');
     const backToTopButton = document.getElementById('back-to-top');
+    const navUnderline = document.querySelector('.nav-underline');
+    let isScrollingByClick = false; // Flag to prevent scroll handler interference during click-initiated scrolls
 
     // Hamburger Menu Toggle
     const navSlide = () => {
@@ -48,13 +50,27 @@ document.addEventListener('DOMContentLoaded', function() {
     for (const link of navLinks) {
         link.addEventListener('click', function(e) {
             e.preventDefault();
+            
+            // Immediately set active class and move underline for the clicked link
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+            moveUnderline(this);
+
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);            
             if (targetElement) {
+                isScrollingByClick = true; // Set flag before initiating smooth scroll
                 window.scrollTo({
                     top: targetElement.offsetTop - 70, // Offset for fixed header
                     behavior: 'smooth'
                 });
+
+                // Reset flag after a duration slightly longer than smooth scroll
+                // This allows handleScroll to take over once the scroll settles
+                setTimeout(() => {
+                    isScrollingByClick = false;
+                    handleScroll(); // Re-evaluate active section after scroll settles
+                }, 800); // Adjust this duration if scroll animation is longer/shorter
             }
         });
     }
@@ -63,35 +79,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- Consolidated Scroll Handler for Performance ---
     const handleScroll = () => {
+        if (isScrollingByClick) { // If scrolling due to a click, defer to the click handler's logic
+            return;
+        }
+
+        let currentSectionId = '';
+        let activeLink = null;
+
         // Back to Top Button Logic
         if (window.scrollY > 300) { // Show button after scrolling 300px
             backToTopButton.classList.add('show');
         } else {
             backToTopButton.classList.remove('show');
         }
-
-        // Active Nav Link Logic
-        let currentSectionId = '';
+        
+        // Determine the currently active section based on scroll position
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (window.scrollY >= sectionTop - 75) { // 75px offset for header height
+            // Use a slightly larger offset for determining active section to ensure it's truly in view
+            if (window.scrollY >= sectionTop - 100) { 
                 currentSectionId = section.getAttribute('id');
             }
         });
-
+        // Find and set the active link based on scroll position
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${currentSectionId}`) {
                 link.classList.add('active');
+                activeLink = link;
             }
         });
+
+        // Fallback to the first link if no section is active (e.g., at the very top)
+        if (!activeLink && navLinks.length > 0) {
+            activeLink = navLinks[0];
+            activeLink.classList.add('active');
+        }
+
+        moveUnderline(activeLink);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true }); // Use passive listener for better scroll performance
 
     // Scroll to top when button is clicked
     backToTopButton.addEventListener('click', () => {
+        isScrollingByClick = true; // Set flag
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => {
+            isScrollingByClick = false;
+            handleScroll(); // Re-evaluate after scroll settles
+        }, 800);
     });
     // Keyframes for nav link fade-in animation needs to be in CSS.
     // We'll add it dynamically if not present for robustness, but it's better in CSS.
@@ -101,9 +138,37 @@ document.addEventListener('DOMContentLoaded', function() {
         styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
     }
 
+    // --- Magic Line Navigation Logic ---
+    function moveUnderline(target) {
+        if (!target || !navUnderline) return;
+
+        const targetLi = target.parentElement;
+        if (targetLi) {
+            navUnderline.style.width = `${targetLi.offsetWidth}px`;
+            navUnderline.style.left = `${targetLi.offsetLeft}px`;
+        }
+    }
+
+    // Add hover effects for the underline
+    navLinks.forEach(link => {
+        link.parentElement.addEventListener('mouseover', () => moveUnderline(link));
+    });
+
+    // When mouse leaves the nav, move underline back to the active link
+    navLinksUl.addEventListener('mouseleave', () => { // Only move back if not currently scrolling by click
+        if (!isScrollingByClick) {
+            const activeLink = document.querySelector('.nav-links a.active');
+            moveUnderline(activeLink);
+        }
+    });
+
     // Initialize navigation features
     navSlide();
-    handleScroll(); // Run once on load to set initial state
+    // Initial call to set underline position correctly on load
+    // Use requestAnimationFrame for better timing after layout is stable
+    requestAnimationFrame(() => {
+        handleScroll();
+    });
     closeMenuOnLinkClick();
 
     // Scrolling Animation (Fade-in)

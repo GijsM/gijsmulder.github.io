@@ -32,6 +32,7 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
+    position: relative; /* Required for absolute positioning of the underline */
 }
 
 .nav-links li {
@@ -47,17 +48,6 @@ nav {
     padding: 0.5rem 0;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
 .nav-links a:hover,
 .nav-links a.active {
     color: var(--text-color);
@@ -65,7 +55,15 @@ nav {
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
-    width: 100%;
+    /* This is now handled by the .nav-underline element */
+}
+
+.nav-underline {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: left 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .hamburger {
@@ -110,6 +108,10 @@ nav {
     .nav-links li {
         margin-left: 0;
         opacity: 0;
+    }
+
+    .nav-underline {
+        display: none; /* Hide the underline on mobile */
     }
 
     .hamburger {
