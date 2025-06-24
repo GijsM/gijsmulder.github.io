@@ -44,3 +44,19 @@
     opacity: 1;
     transform: translateY(0); /* End at original position */
 }
+
+/*
+ * Safari-Specific Fix for fade-in animations:
+ * Safari can sometimes have issues with `transform` and `opacity` animations
+ * in conjunction with IntersectionObserver, leading to elements not appearing.
+ * This `@supports` query targets Safari and disables the fade-in effect
+ * to ensure content is always visible.
+ */
+@supports (-webkit-hyphens: none) {
+    .fade-in,
+    .fade-in-card {
+        opacity: 1 !important; /* Ensure visibility */
+        transform: none !important; /* Remove transform */
+        transition: none !important; /* Disable transition */
+    }
+}

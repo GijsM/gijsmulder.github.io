@@ -1,3 +1,26 @@
+/* --- Card Grid Layouts --- */
+.card-grid,
+.portfolio-grid,
+.testimonial-grid {
+    display: grid;
+    gap: 1.5rem;
+    /* Default to a single, full-width column on mobile */
+    grid-template-columns: 1fr;
+}
+
+/* For tablets and larger, create responsive, auto-fitting columns */
+@media (min-width: 600px) {
+    .card-grid {
+        /* For Expertise & Services cards */
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .portfolio-grid,
+    .testimonial-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
 /* Unified base styles for all cards */
 .expertise-card,
 .portfolio-card,
@@ -10,8 +33,9 @@
     border-radius: 8px;
     border: 1px solid var(--border-color);
     
-    /* Default transitions (individual cards will add more) */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Pseudo-element for the animated gradient on all cards */
@@ -39,20 +63,16 @@
     z-index: -1; /* Place it behind the card's content */
 }
 
-/* --- Expertise & Service Card Styles --- */
-.expertise-card {
-    display: flex;
-    flex-direction: column;
-}
-
-.expertise-card p {
+/* --- Unified Paragraph Styles for Cards --- */
+.expertise-card p,
+.portfolio-card p {
     color: var(--text-muted-color);
     font-size: 0.9rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Ensures the main text block grows, pushing tags/links to the bottom */
 }
 
 .expertise-card h3 {
-    color: var(--accent-color);
     margin-bottom: 1rem;
 }
 
@@ -62,37 +82,24 @@
     color: var(--text-color);
 }
 
-.expertise-card:hover {
+.expertise-card:hover,
+.portfolio-card:hover,
+.testimonial-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.expertise-card:hover::after {
+.expertise-card:hover::after,
+.portfolio-card:hover::after,
+.testimonial-card:hover::after {
     opacity: 1;
     animation: cardGradientAnimation 8s linear infinite;
 }
 
 /* --- Portfolio Card Styles --- */
 .portfolio-card {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out; /* Preserve existing transitions */
-}
-
-.portfolio-card:hover {
-    transform: translateY(-5px);
-}
-
-.portfolio-card:hover::after {
-    opacity: 1;
-    animation: cardGradientAnimation 8s linear infinite;
-}
-
-.portfolio-card .card-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    /* This transition is for the fade-in effect and overrides the base transition */
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
 }
 
 .card-header {
@@ -148,30 +155,11 @@
 }
 
 /* --- Testimonial Card Styles --- */
-.testimonial-card {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease; /* Preserve existing transitions */
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-}
-
-.testimonial-card:hover::after {
-    opacity: 1;
-    animation: cardGradientAnimation 8s linear infinite;
-}
-
-.testimonial-card .card-content {
-    padding: 1.5rem;
-}
-
 .testimonial-card .quote {
     font-size: 1.1rem;
     font-style: italic;
     color: var(--text-muted-color);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     flex-grow: 1; /* Pushes the author info down */
 }
 
