@@ -123,7 +123,14 @@
     font-weight: 700;
     text-transform: uppercase;
     white-space: nowrap;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents the tag from shrinking if the title is long */
+    text-decoration: none; /* Remove underline from link */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.company-tag:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-2px); /* Subtle lift on hover */
 }
 
 .tags {
