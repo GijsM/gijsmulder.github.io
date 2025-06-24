@@ -40,3 +40,21 @@ h3 {
 h1.animated-glow::after {
     filter: blur(60px); /* More pronounced blur for the main title */
 }
+
+/*
+ * Safari-Specific Fix:
+ * Safari can sometimes clip the `filter: blur()` effect if it extends too far
+ * beyond the element's bounding box. This `@supports` query targets Safari
+ * and reduces the blur radius to prevent the glow from being cut off.
+ */
+@supports (-webkit-hyphens: none) {
+    .animated-glow::after {
+        filter: blur(10px); /* Slightly smaller blur for Safari */
+    }
+    h1.animated-glow::after {
+        filter: blur(35px); /* More pronounced, but smaller blur for Safari */
+    }
+    .logo.animated-glow::after {
+        filter: blur(5px); /* Even smaller blur for header logo to prevent clipping */
+    }
+}
