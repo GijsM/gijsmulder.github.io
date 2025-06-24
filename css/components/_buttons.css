@@ -1,17 +1,18 @@
 .cta-button {
     display: inline-block;
     background-color: var(--accent-color);
-    color: #fff;
+    color: var(--primary-color);
     padding: 12px 24px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    background-color: #0056b3;
+    background-color: var(--accent-color-hover);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .project-link {

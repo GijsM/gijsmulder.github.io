@@ -2,7 +2,8 @@
 :root {
     --primary-color: #0A1128; /* Deep Midnight Blue */
     --secondary-color: #121A30; /* Darker Slate Blue */
-    --accent-color: #8FB3D9; /* Slightly brighter, less muted blue */ 
+    --accent-color: #8FB3D9; /* Slightly brighter, less muted blue */
+    --accent-color-hover: #A4C2E3; /* A brighter version of the accent color for hovers */
     --text-color: #E0E1DD; /* Off-white */
     --text-muted-color: #A9A9A9; /* Light Gray */
     --card-bg-color: var(--secondary-color);
