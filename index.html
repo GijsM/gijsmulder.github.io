@@ -68,7 +68,7 @@
             <nav>
                 <div class="logo animated-glow" data-text="Gijs Mulder">Gijs Mulder</div>
                 <button class="hamburger" aria-controls="nav-links-list" aria-expanded="false" aria-label="Toggle navigation menu">
-                    <span class="line1"></span><span class="line2"></span><span class="line3"></span>
+                    <span class="line1" aria-hidden="true"></span><span class="line2" aria-hidden="true"></span><span class="line3" aria-hidden="true"></span>
                 </button>
                 <ul class="nav-links" id="nav-links-list">
                     <li><a href="#hero">Home</a></li>
@@ -85,9 +85,9 @@
     </header>
 
     <main>
-        <section id="hero">
+        <section id="hero" aria-labelledby="hero-heading">
             <div class="container">
-                <h1 class="animated-glow" data-text="Gijs Mulder">Gijs Mulder</h1>
+                <h1 id="hero-heading" class="animated-glow" data-text="Gijs Mulder">Gijs Mulder</h1>
                 <p class="subtitle"> Building clean, scalable, and impactful data systems.</p>
                 <a href="#portfolio" class="cta-button">View My Work</a>
                 <div class="social-links">
@@ -120,7 +120,7 @@
                     <div class="about-text">
                         <p>I am a technically adept and analytically minded data engineer with a strong foundation in software engineering and a deep commitment to building clean, scalable data systems. With a background in computer science and professional experience across e-commerce, adtech, and sustainability-focused tech environments, I bring a practical, structured approach to solving data challenges, whether that means designing new pipelines from scratch or re-architecting legacy systems to meet modern demands.</p>
                         <p>I thrive in cross-functional teams, value clear documentation and code quality, and combine a pragmatic problem-solving approach with an eye for long-term maintainability. I’m especially motivated by projects that push technical boundaries and have real-world impact, whether optimizing digital marketing infrastructure or contributing to climate-conscious innovation.</p>
-                        <a href="/Gijs_Mulder_CV.pdf" download class="cta-button">Download CV</a>
+                        <a href="/Gijs_Mulder_CV.pdf" download class="cta-button">Download CV (PDF)</a>
                     </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                             <span>Flutter</span>
                             <span>AI/ML</span>
                         </div>
-                         <a href="https://newsaiart.web.app/#/" target="_blank" rel="noopener noreferrer" class="card-link-wrapper">
+                         <a href="https://newsaiart.web.app/#/" target="_blank" rel="noopener noreferrer" class="card-link-wrapper" aria-label="View the Today In Paint project">
                              <span class="project-link">View Project <i class="fas fa-arrow-right"></i></span>
                          </a>
                     </div>
@@ -364,8 +364,7 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top" aria-label="Back to top">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px">
-            <path d="M0 0h24v24H0V0z" fill="none"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24px" height="24px" aria-hidden="true" focusable="false">
             <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
         </svg>
     </button>
