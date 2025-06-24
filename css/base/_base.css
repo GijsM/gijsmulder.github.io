@@ -77,6 +77,15 @@ body.gradient-background::before {
     }
 }
 
+/*
+ * When sections become visible via the 'appear' class, ensure they don't clip content.
+ * This prevents 'overflow: hidden' from an initial animation state (like a fade-in)
+ * from cutting off visual effects like the 'animated-glow' on headings.
+ */
+section.appear {
+    overflow: visible;
+}
+
 /* --- Back to Top Button --- */
 #back-to-top {
     position: fixed;
