@@ -4,9 +4,5 @@
     #hero h1 { font-size: 2.5rem; }
     #hero .subtitle { font-size: 1.2rem; }
 
-    /* Removed: #main-header nav { flex-direction: column; height: auto; padding: 1rem 0; } */
-    #main-header ul { flex-direction: column; text-align: center; width: 100%; }
-    #main-header ul li { margin: 0.5rem 0; }
-
     .portfolio-grid, .card-grid { grid-template-columns: 1fr; }
 }

@@ -102,6 +102,7 @@ nav {
         transition: transform 0.5s ease-in;
         padding: 2rem 0; /* Keep vertical padding */
         margin-left: 0; /* Ensure no auto-margin from desktop rule */
+        text-align: center; /* Center the link text */
     }
 
     .nav-links.nav-active {
@@ -110,6 +111,7 @@ nav {
 
     .nav-links li {
         opacity: 0;
+        margin: 0.5rem 0; /* Add vertical margin between links */
     }
 
     .nav-underline {
@@ -119,6 +121,19 @@ nav {
     .hamburger {
         display: block; /* Show hamburger on mobile */
         margin-left: auto; /* Push hamburger to the right on mobile */
+    }
+
+    /* Further refinement for very small screens (e.g., iPhone SE) */
+    @media screen and (max-width: 375px) {
+        .nav-links {
+            width: 80%; /* Make the panel wider to prevent text wrapping */
+            justify-content: flex-start; /* Align items to the top */
+            padding-top: 3rem; /* Add space at the top */
+        }
+        .nav-links li {
+            /* Increase vertical spacing for a less crowded feel */
+            margin: 1rem 0;
+        }
     }
 }
 
