@@ -175,9 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const sectionsToAnimate = document.querySelectorAll('section');
 
     const observerOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.2 // Trigger when 20% of the section is visible
+        threshold: 0.2 // Trigger when 20% of the section is visible, other options are default
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -189,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    sectionsToAnimate.forEach(section => {
+    sectionsToAnimate.forEach(section => { // Use forEach directly instead of destructuring
         section.classList.add('fade-in'); // Add initial fade-in class
         observer.observe(section);
     });
@@ -198,9 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cardsToAnimate = document.querySelectorAll('.fade-in-card');
 
     const cardObserverOptions = {
-        root: null, // viewport
-        rootMargin: '0px',
-        threshold: 0.1 // Trigger when 10% of the element is visible
+        threshold: 0.1 // Trigger when 10% of the element is visible, other options are default
     };
 
     const cardObserver = new IntersectionObserver((entries, observer) => {
@@ -213,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, cardObserverOptions);
 
-    cardsToAnimate.forEach((card, index) => {
+    cardsToAnimate.forEach((card, index) => { // Use forEach directly instead of destructuring
         card.style.transitionDelay = `${index * 0.1}s`; // Stagger delay
         cardObserver.observe(card);
     });

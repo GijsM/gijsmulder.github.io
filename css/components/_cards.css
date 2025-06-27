@@ -72,16 +72,6 @@
     flex-grow: 1; /* Ensures the main text block grows, pushing tags/links to the bottom */
 }
 
-.expertise-card h3 {
-    margin-bottom: 1rem;
-}
-
-.expertise-card span {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-color);
-}
-
 .expertise-card:hover,
 .portfolio-card:hover,
 .testimonial-card:hover {
@@ -137,6 +127,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    list-style: none; /* Remove default bullet points */
 }
 
 .expertise-card .tags,
@@ -145,7 +136,7 @@
     padding-top: 1rem; /* Add some space above the tags */
 }
 
-.tags span {
+.tags li {
     background-color: var(--primary-color);
     color: var(--accent-color);
     padding: 0.25rem 0.75rem;
@@ -155,7 +146,7 @@
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.tags span:hover {
+.tags li:hover {
     transform: translateY(-2px);
     background-color: var(--accent-color);
     color: var(--primary-color);
