@@ -27,6 +27,37 @@ section {
     box-sizing: border-box; /* Ensure padding is included in height calculation */
 }
 
+/* Entry Animation for Hero elements */
+#hero h1,
+#hero .subtitle,
+#hero .cta-button,
+#hero .social-links {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+body.site-loaded #hero h1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s; /* Staggered delays after header */
+}
+body.site-loaded #hero .subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+}
+body.site-loaded #hero .cta-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1s;
+}
+body.site-loaded #hero .social-links {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.2s;
+}
+
 #hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;

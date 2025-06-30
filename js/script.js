@@ -253,3 +253,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     contactForm.addEventListener('submit', handleFormSubmit);
 });
+
+window.addEventListener('load', () => {
+    const body = document.body;
+    // Trigger the entry animations once the page is fully loaded.
+    body.classList.remove('no-scroll');
+    body.classList.add('site-loaded');
+});

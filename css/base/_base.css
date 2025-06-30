@@ -68,6 +68,10 @@ body.gradient-background::before {
     animation: gradientAnimation 20s ease-in-out infinite;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* --- Custom UI Element Styling --- */
 
 /* Custom text selection color for a cohesive look */
@@ -116,7 +120,6 @@ body.gradient-background::before {
 section.appear {
     overflow: visible;
 }
-
 /* --- Back to Top Button --- */
 #back-to-top {
     position: fixed;
